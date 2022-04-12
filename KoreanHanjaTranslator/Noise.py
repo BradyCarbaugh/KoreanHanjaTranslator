@@ -14,7 +14,9 @@ twoStrokes_array = np.array(twoStrokes)
 height = twoStrokes.size[0]
 width = twoStrokes.size[1]
 
+# Creating copies
 for z in range(25):
+    # Mixing Pixels
     for x in range(int(height / 50)):
         for y in range(int(width / 100)):
             left = twoStrokes.getpixel((x, y))
