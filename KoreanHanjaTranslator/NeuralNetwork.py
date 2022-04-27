@@ -3,9 +3,10 @@
 import os
 import torch
 from torch import nn
+import Images
 from torch.utils.data import DataLoader
 # from torchvision import datasets, transforms
-import Loader
+import ImageClassification
 from DataSet import KoreanHanjaCharacterDataset
 
 # Using cpu
@@ -33,8 +34,9 @@ class NeuralNetwork(nn.Module):
 
 # Creating Model and moving it to device(cpu)
 # model = NeuralNetwork().to(device)
-model = KoreanHanjaCharacterDataset().to(device)
-print(model)
+# model = KoreanHanjaCharacterDataset().to(device)
+model = KoreanHanjaCharacterDataset(r'HanjaCharacters.csv', Images).to(device)
+# print(model)
 
 # Calling model on input and getting prediction probabilities
 x = torch.rand(1, 28, 28, device=device)
